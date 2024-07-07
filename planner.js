@@ -2,7 +2,7 @@
 function settingDate(date, day) {
   date = new Date(date)
   date.setDate(day)
-  date.setHours(23)
+  date.setHours(4)
   return date
 }
 
@@ -27,7 +27,6 @@ function getDatesBetween(date1, date2) {
     }
   }
 
-  console.log(dates)
   let content = ''
   let weekDays = [
     { shortDay: 'Mon', fullDay: 'Monday' },
@@ -61,7 +60,8 @@ function getDatesBetween(date1, date2) {
     content += '</thead>'
     content += '<tbody>'
     let j = 1
-    let displayNumber, idMonth
+    let displayNumber
+    let idMonth
     while (j <= lastDate.getDate()) {
       content += '<tr>'
       for (let k = 0; k < 7; k++) {
