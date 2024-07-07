@@ -2,7 +2,7 @@
 function settingDate(date, day) {
   date = new Date(date)
   date.setDate(day)
-  date.setHours(12)
+  date.setHours(23)
   return date
 }
 
@@ -73,6 +73,11 @@ function getDatesBetween(date1, date2) {
           } else {
             content += '<td></td>'
           }
+        } else if (j > lastDate.getDate) {
+          content += '<td></td>'
+        } else {
+          content += '<td>' + displayNumber + '</td>'
+          j++
         }
       }
       content += '</tr>'
