@@ -26,7 +26,7 @@ body {
 }
 
 .left {
-  width: 60%;
+  width: 90%;
   padding: 20px;
 }
 
@@ -123,4 +123,118 @@ body {
   justify-content: center;
   cursor: pointer;
   color: rgb(167, 131, 66);
+  border: 1px solid rgb(117, 92, 46);
+}
+
+.calender .day:not(.prev-date, .next-date):hover {
+  color: rgb(105, 177, 63);
+  background-color: rgb(148, 119, 119);
+}
+
+.calender .days .prev-date,
+.calender .days .next-date {
+  color: rgb(48, 36, 36);
+}
+
+.calender .days .active {
+  position: relative;
+  font-size: 2rem;
+  color: rgb(105, 177, 63);
+  background-color: rgb(148, 119, 119);
+}
+
+.calender .days .active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px 1px rgb(148, 119, 119);
+}
+
+.calender .days .today {
+  font-size: 2rem;
+  color: rgb(105, 177, 63);
+}
+
+.calender .days .event {
+  position: relative;
+}
+
+.calender .days .event::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 75%;
+  height: 6px;
+  border-radius: 30px;
+  transform: translateX(-50%);
+  background-color: rgb(148, 119, 119);
+}
+
+.calender .event:hover::after {
+  background-color: rgb(105, 177, 63);
+}
+
+.calender .active .event::after {
+  background-color: rgb(105, 177, 63);
+  bottom: 20%;
+}
+
+.calender .active .event {
+  padding-bottom: 10px;
+}
+
+.calender .goto-today {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  color: rgb(148, 119, 119);
+}
+
+.calender .goto-today .goto {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1 px solid rgb(148, 119, 119);
+}
+
+.calender .goto-today .goto input {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 11px;
+  padding: 0 20px;
+  color: rgb(148, 119, 119);
+}
+
+.calender .goto-today button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 11px;
+  background-color: rgb(148, 119, 119);
+  cursor: pointer;
+  color: rgb(105, 177, 63);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.calender .goto-today button:hover {
+  color: rgb(148, 119, 119);
+  background-color: rgb(105, 177, 63);
+}
+
+.calender .goto-today .goto button {
+  border-left: 1px solid rgb(148, 119, 119);
+  border-radius: 11;
+  border: none;
 }
